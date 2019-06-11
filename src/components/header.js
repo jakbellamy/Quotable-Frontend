@@ -10,17 +10,28 @@ export default class Header extends Component {
     }
   }
 
+  loginPress = () => {
+    this.setState({buttonPress: {...this.state.buttonPress, login: true}}, () => 
+      setTimeout(() => {
+        this.setState({buttonPress: {...this.state.buttonPress, login: false}})
+      }, 250)
+    )}
+  signupPress = () => {
+    this.setState({buttonPress: {...this.state.buttonPress, signup: true}}, () => 
+      setTimeout(() => {
+        this.setState({buttonPress: {...this.state.buttonPress, signup: false}})
+      }, 250)
+    )}
+
   clickButton = (button) => {
     switch(button){
       case 'login':
-        this.setState({
-          buttonPress: {...this.state.buttonPress, login: !this.state.buttonPress.login}
-        })
+        this.loginPress()
+        this.props.select('login')
         break;
       case 'signup':
-          this.setState({
-            buttonPress: {...this.state.buttonPress, signup: !this.state.buttonPress.signup}
-          })
+        this.signupPress()
+        this.props.select('signup')
         break;
     }
   }
@@ -33,9 +44,10 @@ export default class Header extends Component {
           <h1 style={styles.the}>The</h1>
           <h1 style={styles.captioner}>Captioner</h1>
         </div>
-        <div name="navbar" style={styles.navbar}>
-          <div name="userLogin" style={styles.navbarLeft} >
-            {/* Register Button */}
+
+        {/* Log Buttons */}
+        <div name="logbar" style={styles.logbar}>
+        <div name="userLogin" style={styles.navbarLeft} >
               {this.state.buttonPress.signup ? 
                 <span 
                   style={styles.spanRed.inactive} 
@@ -51,7 +63,6 @@ export default class Header extends Component {
                 </span>
               }
 
-            {/* Login Button */}
               {this.state.buttonPress.login ? 
                 <span 
                   style={styles.spanBlack.inactive} 
@@ -67,13 +78,22 @@ export default class Header extends Component {
                 </span>
               }
           </div>
+        </div>
 
+        {/* Navbar */}
+        <div name="navbar" style={styles.navbar}>
           <div name="navItems" style={styles.navbarCenter} >
-            <span style={styles.span}>
-              Game Type
+            <span 
+              style={styles.span}
+              onClick={() => this.props.select('game')}
+            >
+              Test Game
             </span>
-            <span style={styles.span}>
-              Join Server
+            <span 
+              style={styles.span}
+              onClick={() => this.props.switch()}
+            >
+              Toggle Format
             </span>      
             <span style={styles.span}>
               Start Server
@@ -81,8 +101,7 @@ export default class Header extends Component {
             <span style={styles.span}>
               About
             </span>
-          </div>   
-               
+          </div>            
         </div>
       </header>
     )

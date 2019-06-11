@@ -4,10 +4,10 @@ export const styles = {
   },
   logo: {
     color: '#00000',
-    fontFamily: 'Cinzel',
     textAlign: 'center'
   },
   the: {
+    fontFamily: 'Cinzel',
     fontSize: '150%',
     paddingTop: '0%,',
     paddingBottom: '-30%,',
@@ -15,20 +15,29 @@ export const styles = {
     marginBottom: '0%'
   },
   captioner: {
-    fontSize: '300%',
+    fontFamily: 'Cinzel Decorative',
+    fontSize: '320%',
     paddingTop: '0%,',
     paddingBottom: '2%,',
     marginTop: '-1%',
     marginBottom: '0%'
   },
+  logbar: {
+    fontsize: '120%',
+    display: 'flex',
+    fontFamily: 'Hind Siliguri, sans-serif',
+    paddingTop: '1%',
+    paddingBottom: '1%',
+    marginTop: '-5%'
+  },
   navbar: {
-    fontsize: '90%',
+    fontsize: '10%',
     borderTop: 'solid 1px #e5e5e5',
     borderBottom: 'solid 1px #e5e5e5',
     display: 'flex',
-    fontFamily: 'Libre Baskerville',
-    paddingTop: '1.5%',
-    paddingBottom: '1.5%'
+    fontFamily: 'Lustria',
+    paddingTop: '.7%',
+    paddingBottom: '.7%'
   },
   navbarLeft:{
     flex: '.4',
@@ -36,7 +45,7 @@ export const styles = {
   },
   navbarCenter:{
     flex: '1',
-    alignItems: 'center'
+    textAlign: 'center'
   },
   span: {
     marginRight: '2%',
@@ -91,6 +100,5 @@ export const styles = {
       paddingRight: '.8%',
       paddingLeft: '.8%',
     }
-    
   }
 }

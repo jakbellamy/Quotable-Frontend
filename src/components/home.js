@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {endpoints} from '../endpoints'
 import WeeklyImageContainer from './weeklyImageContainer';
+import InputContainer from './inputContainer';
 
 export default class Home extends Component {
   state = {
@@ -34,6 +35,7 @@ export default class Home extends Component {
     return (
       <div style={{display: 'flex'}}>
         <WeeklyImageContainer image={this.state.selectedPainting}/>
+        <InputContainer />
       </div>
     )
   }

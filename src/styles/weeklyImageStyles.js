@@ -4,8 +4,8 @@ export const styles = {
         textAlign: 'left'
     },
     img: {
-        maxWidth: 'auto%',
-        height: '60%',
+        width: '90%',
+        maxHeight: 'auto',
         marginTop: '1%',
         marginBottom: '3%',
         marginLeft: 'auto',
